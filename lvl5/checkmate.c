@@ -123,13 +123,13 @@ int	main(int ac, char **av)
 				}
 			}
 			if (!ennemy)
-				ft_putstr("Fail");
+				write(1, "Fail", 4);
 			else if (check_mate(kx, ky, ac - 1, av))
-				ft_putstr("Success");
+				write(1, "Success", 7);
 			else
-				ft_putstr("Fail");
+				write(1, "Fail", 4);
 		}
 	}	
-	ft_putstr("\n");
+	write(1, "\n", 1);
 	return (0);
 }
