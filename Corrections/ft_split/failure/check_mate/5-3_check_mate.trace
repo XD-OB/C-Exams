@@ -1,0 +1,96 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1r11p2.1337.ma
+Darwin 16.7.0 x86_64
+$> date
+Tue Jan 29 05:03:18 CET 2019
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/practice-exam_20190129/ishaimou2
+
+= Git history ==================================================================
+$> git -C /var/folders/01/pg6fd70577d_w4ypw56jkv5w0000gq/T/tmpvB9xr2/user log --pretty='%H - %an, %ad : %s'
+5d0c9beaedcead0efe528408ae4f5cae24cc0749 - nayarix, Tue Jan 29 05:03:07 2019 +0100 : one
+b29a11a6bd8e8d61d154f11b8d237981e984b1d3 - nayarix, Tue Jan 29 04:55:20 2019 +0100 : done
+41200bdd8e9927eae3faf7e653d09a7933800302 - nayarix, Tue Jan 29 04:46:26 2019 +0100 : done
+cfced9afa00cbc09f79a9b9cfd0707f3d5c38d8c - nayarix, Tue Jan 29 04:10:43 2019 +0100 : done
+9d76edf9ece7c3a25ba1495edaae1c9a2631a608 - nayarix, Tue Jan 29 03:48:22 2019 +0100 : done
+c2e9b507b6695a25af91f82243dae2c771be947d - nayarix, Tue Jan 29 03:43:45 2019 +0100 : done
+7a09fb854d2af74064137d17e2deed8882b636a3 - nayarix, Tue Jan 29 03:41:09 2019 +0100 : done
+9607652c944302c58ffa69e73ee51b8603de1914 - nayarix, Tue Jan 29 03:40:05 2019 +0100 : done
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/01/pg6fd70577d_w4ypw56jkv5w0000gq/T/tmpvB9xr2/user
+total 24
+-rw-r--r--  1 deepthought  deepthought  6148 Jan 29 05:03 .DS_Store
+-rw-r--r--  1 deepthought  deepthought  2128 Jan 29 05:03 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 29 05:03 aff_first_param
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 29 05:03 alpha_mirror
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 29 05:03 check_mate
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 29 05:03 ft_itoa
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 29 05:03 ft_strlen
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 29 05:03 hidenp
+drwxr-xr-x  4 deepthought  deepthought   136 Jan 29 05:03 moment
+drwxr-xr-x  3 deepthought  deepthought   102 Jan 29 05:03 print_memory
+
+/var/folders/01/pg6fd70577d_w4ypw56jkv5w0000gq/T/tmpvB9xr2/user/aff_first_param:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1045 Jan 29 05:03 aff_first_param.c
+
+/var/folders/01/pg6fd70577d_w4ypw56jkv5w0000gq/T/tmpvB9xr2/user/alpha_mirror:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1214 Jan 29 05:03 alpha_mirror.c
+
+/var/folders/01/pg6fd70577d_w4ypw56jkv5w0000gq/T/tmpvB9xr2/user/check_mate:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2235 Jan 29 05:03 check_mate.c
+
+/var/folders/01/pg6fd70577d_w4ypw56jkv5w0000gq/T/tmpvB9xr2/user/ft_itoa:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1809 Jan 29 05:03 ft_itoa.c
+
+/var/folders/01/pg6fd70577d_w4ypw56jkv5w0000gq/T/tmpvB9xr2/user/ft_strlen:
+total 8
+-rw-r--r--  1 deepthought  deepthought  978 Jan 29 05:03 ft_strlen.c
+
+/var/folders/01/pg6fd70577d_w4ypw56jkv5w0000gq/T/tmpvB9xr2/user/hidenp:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1159 Jan 29 05:03 hidenp.c
+
+/var/folders/01/pg6fd70577d_w4ypw56jkv5w0000gq/T/tmpvB9xr2/user/moment:
+total 16
+-rw-r--r--  1 deepthought  deepthought   236 Jan 29 05:03 main.c
+-rw-r--r--  1 deepthought  deepthought  2980 Jan 29 05:03 moment.c
+
+/var/folders/01/pg6fd70577d_w4ypw56jkv5w0000gq/T/tmpvB9xr2/user/print_memory:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1715 Jan 29 05:03 print_memory.c
+ 
+= check_mate ===================================================================
+$> gcc -Wextra -Wall -Werror check_mate.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./i2m99kr9rg0nea8jekzzch5p 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+--- user_output_test1	2019-01-29 05:03:20.000000000 +0100$
++++ test1.output	2019-01-29 05:03:20.000000000 +0100$
+@@ -1 +1 @@$
+-Fail$
++$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

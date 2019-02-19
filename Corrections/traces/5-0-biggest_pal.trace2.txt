@@ -1,0 +1,88 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1r7p8.1337.ma
+Darwin 16.7.0 x86_64
+$> date
+Thu Dec 27 13:51:10 CET 2018
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2018/c-exam-alone-in-the-dark-beginner/exam_20181227/zoulhafi
+
+= Git history ==================================================================
+$> git -C /var/folders/t6/c7b643wj4nl68pwh8h0pc8s40000gq/T/tmp13SaNU/user log --pretty='%H - %an, %ad : %s'
+3f34405f1e7ae10328c53cf20455aa03e910c561 - Exam 42, Thu Dec 27 13:49:40 2018 +0100 : biggest_pal
+094c90df5b89d5215609ca277044c95cdd1789f6 - Exam 42, Thu Dec 27 12:25:09 2018 +0100 : rev_wstr
+f873d47c7c20f1efbab829667f257a447db34056 - Exam 42, Thu Dec 27 12:21:36 2018 +0100 : rev_wstr
+6df830950a3843f246bb1ec04296fb328a9af5b9 - Exam 42, Thu Dec 27 11:52:55 2018 +0100 : print_hex
+cee02167e90c953e5b028d70b1c106f6c926be80 - Exam 42, Thu Dec 27 10:43:42 2018 +0100 : inter
+e47172d84ebf1890c9dd5d35f65b4b06d77c2d78 - Exam 42, Thu Dec 27 10:11:38 2018 +0100 : ft_swap
+a4d6e98fb067f72a096491cbcc4178d4727bcbf1 - Exam 42, Thu Dec 27 10:05:19 2018 +0100 : only_a
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/t6/c7b643wj4nl68pwh8h0pc8s40000gq/T/tmp13SaNU/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1666 Dec 27 13:51 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Dec 27 13:51 biggest_pal
+drwxr-xr-x  3 deepthought  deepthought   102 Dec 27 13:51 ft_swap
+drwxr-xr-x  3 deepthought  deepthought   102 Dec 27 13:51 inter
+drwxr-xr-x  3 deepthought  deepthought   102 Dec 27 13:51 only_a
+drwxr-xr-x  3 deepthought  deepthought   102 Dec 27 13:51 print_hex
+drwxr-xr-x  3 deepthought  deepthought   102 Dec 27 13:51 rev_wstr
+
+/var/folders/t6/c7b643wj4nl68pwh8h0pc8s40000gq/T/tmp13SaNU/user/biggest_pal:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1682 Dec 27 13:51 biggest_pal.c
+
+/var/folders/t6/c7b643wj4nl68pwh8h0pc8s40000gq/T/tmp13SaNU/user/ft_swap:
+total 8
+-rw-r--r--  1 deepthought  deepthought  969 Dec 27 13:51 ft_swap.c
+
+/var/folders/t6/c7b643wj4nl68pwh8h0pc8s40000gq/T/tmp13SaNU/user/inter:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1469 Dec 27 13:51 inter.c
+
+/var/folders/t6/c7b643wj4nl68pwh8h0pc8s40000gq/T/tmp13SaNU/user/only_a:
+total 8
+-rw-r--r--  1 deepthought  deepthought  964 Dec 27 13:51 only_a.c
+
+/var/folders/t6/c7b643wj4nl68pwh8h0pc8s40000gq/T/tmp13SaNU/user/print_hex:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1554 Dec 27 13:51 print_hex.c
+
+/var/folders/t6/c7b643wj4nl68pwh8h0pc8s40000gq/T/tmp13SaNU/user/rev_wstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1394 Dec 27 13:51 rev_wstr.c
+ 
+= biggest_pal ==================================================================
+$> gcc -Wextra -Wall -Werror biggest_pal.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./4mculdmblzkjr0uvzml881x5 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./ok9j9ej69mkmso98wv9c3qv5 a
+$> diff -U 3 user_output_test2 test2.output | cat -e
+--- user_output_test2	2018-12-27 13:51:11.000000000 +0100$
++++ test2.output	2018-12-27 13:51:11.000000000 +0100$
+@@ -1 +1 @@$
+-$
++a$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

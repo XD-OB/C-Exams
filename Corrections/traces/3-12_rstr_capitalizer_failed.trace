@@ -1,0 +1,95 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1r6p3.1337.ma
+Darwin 16.7.0 x86_64
+$> date
+Fri Feb  8 12:20:54 CET 2019
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/practice-exam_20190208/ishaimou2
+
+= Git history ==================================================================
+$> git -C /var/folders/nb/j3120zd53zbg6c42bkq6h4_h0000gq/T/tmpIvcKz3/user log --pretty='%H - %an, %ad : %s'
+8889bd71099106f3ff1613cbf40b197528c51185 - nayarix, Fri Feb 8 12:20:45 2019 +0100 : done
+deaf475a83b9e068bf1e3e861193b218a6e70572 - nayarix, Fri Feb 8 11:15:35 2019 +0100 : done
+c92ce1cc64b398c7e23a29bbb789b4f18448a7cf - nayarix, Fri Feb 8 11:09:20 2019 +0100 : done
+187482a408033613674a8465d34112347aafa6b1 - nayarix, Fri Feb 8 11:08:23 2019 +0100 : done
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/nb/j3120zd53zbg6c42bkq6h4_h0000gq/T/tmpIvcKz3/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  926 Feb  8 12:20 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  8 12:20 ft_print_numbers
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  8 12:20 ft_strlen
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  8 12:20 rstr_capitalizer
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  8 12:20 swap_bits
+
+/var/folders/nb/j3120zd53zbg6c42bkq6h4_h0000gq/T/tmpIvcKz3/user/ft_print_numbers:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1015 Feb  8 12:20 ft_print_numbers.c
+
+/var/folders/nb/j3120zd53zbg6c42bkq6h4_h0000gq/T/tmpIvcKz3/user/ft_strlen:
+total 8
+-rw-r--r--  1 deepthought  deepthought  978 Feb  8 12:20 ft_strlen.c
+
+/var/folders/nb/j3120zd53zbg6c42bkq6h4_h0000gq/T/tmpIvcKz3/user/rstr_capitalizer:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1738 Feb  8 12:20 rstr_capitalizer.c
+
+/var/folders/nb/j3120zd53zbg6c42bkq6h4_h0000gq/T/tmpIvcKz3/user/swap_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  980 Feb  8 12:20 swap_bits.c
+ 
+= rstr_capitalizer =============================================================
+$> gcc -Wextra -Wall -Werror rstr_capitalizer.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./5rif2sifbt0m6ec7i19g0ayq 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./fd74ev7n0nokdzw8j83vp2ly 
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./ge3f4c9qb7bmnxk4crc9769e "w1k"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./gb7qc7vtfk9wyq17dtk4qkbu ")Urn1se2z5b97FCM0yGruH@YKnyj3sPRLfZ	 2PzMgK4Rw3otifGWVNAYXMcI pFhbSKGkTICrY<NPa	"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./2uvfwb72978drlp6pm2h41lz "+2RN+2zo1NT>w7iRdLgMB1,qzQkg qzlhib *"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./uuytx5xam0s5zn8ghtu0198w "@gxXz	DqjTtM 82n8LV06>BEkAMvc2w5ZrOeV*ri4yLJ/4afVUhqpwO 	yQ80NA	8NxcUqhXF 	38BOzPu."
+$> diff -U 3 user_output_test6 test6.output | cat -e
+--- user_output_test6	2019-02-08 12:20:57.000000000 +0100$
++++ test6.output	2019-02-08 12:20:57.000000000 +0100$
+@@ -1 +1 @@$
+-@gxxZ	dqjttM 82n8lv06>bekamvc2w5zroev*ri4ylj/4afvuhqpwO 	yq80nA	8nxcuqhxF 	38bozpU.$
++@gxxZ	dqjttM 82n8lv06>bekamvc2w5zroev*ri4ylj/4afvuhqpwO 	yq80nA	8nxcuqhxF 	38bozpu.$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

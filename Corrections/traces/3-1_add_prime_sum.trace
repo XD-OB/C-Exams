@@ -1,0 +1,145 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1r9p8.1337.ma
+Darwin 16.7.0 x86_64
+$> date
+Sun Feb  3 09:39:03 CET 2019
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/practice-exam_20190203/ishaimou2
+
+= Git history ==================================================================
+$> git -C /var/folders/79/_zmzkzfj49n38_bf4jb0cg4w0000gq/T/tmprnwtCn/user log --pretty='%H - %an, %ad : %s'
+e38b212ab05e924709be6c59819fc62c123c27be - nayarix, Sun Feb 3 09:38:45 2019 +0100 : done
+f7138e9e80204672695b23450dcc710fcea3af40 - nayarix, Sun Feb 3 09:33:47 2019 +0100 : done
+20fa81ca807adf6e634d547e74e5dc9e447cbe1f - nayarix, Sun Feb 3 09:26:00 2019 +0100 : done
+95e567fafc5ecd8f468d3740c6be1f33707f3d7f - nayarix, Sun Feb 3 09:24:14 2019 +0100 : done
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/79/_zmzkzfj49n38_bf4jb0cg4w0000gq/T/tmprnwtCn/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  967 Feb  3 09:39 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  3 09:39 add_prime_sum
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  3 09:39 fizzbuzz
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  3 09:39 ft_countdown
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  3 09:39 ft_strrev
+
+/var/folders/79/_zmzkzfj49n38_bf4jb0cg4w0000gq/T/tmprnwtCn/user/add_prime_sum:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2033 Feb  3 09:39 add_prime_sum.c
+
+/var/folders/79/_zmzkzfj49n38_bf4jb0cg4w0000gq/T/tmprnwtCn/user/fizzbuzz:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1550 Feb  3 09:39 fizzbuzz.c
+
+/var/folders/79/_zmzkzfj49n38_bf4jb0cg4w0000gq/T/tmprnwtCn/user/ft_countdown:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1037 Feb  3 09:39 ft_countdown.c
+
+/var/folders/79/_zmzkzfj49n38_bf4jb0cg4w0000gq/T/tmprnwtCn/user/ft_strrev:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1100 Feb  3 09:39 ft_strrev.c
+ 
+= add_prime_sum ================================================================
+$> gcc -Wextra -Wall -Werror add_prime_sum.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./frkzcm3mlmfb0d2x4bwewhpw 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./3zn5lrnnkwjzha90zo6j26ud "17" "23" "42"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./zc45z18ml7ncp9651v1xf4o3 "-79"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./1i9pgdpc0xhh8cwi2qzeequ0 "-1508"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./bgeiolndwck82s21wdligo07 "1533"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./u8h0y5a8ps69dbsiva594mg4 "1801"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./p7p46ps6lmbld4co6e7zdzqk "885"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./c79motctrftsbrm0uudq73vo "337"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./1ghmccgmo9f77pq932hbe7d3 "352"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./rrehlqfvvir7n616fbiw8w9j "1443"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./ucg7gdhrdatst4cxjos5hb5r "1722"
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./c5w9iffbz8yut16nl6krxlxd "197"
+$> diff -U 3 user_output_test12 test12.output | cat -e
+
+Diff OK :D
+= Test 13 ==================================================
+$> ./gw5a5ygoxql3gitbfn8wz4k8 "1439"
+$> diff -U 3 user_output_test13 test13.output | cat -e
+
+Diff OK :D
+= Test 14 ==================================================
+$> ./ndlaacil5flypm66u3f2y4on "1888"
+$> diff -U 3 user_output_test14 test14.output | cat -e
+
+Diff OK :D
+= Test 15 ==================================================
+$> ./387ffc78hmoigzkpwb5hsl77 "1554"
+$> diff -U 3 user_output_test15 test15.output | cat -e
+
+Diff OK :D
+= Test 16 ==================================================
+$> ./k6ojvlj2spsqjusk77byh73n "869"
+$> diff -U 3 user_output_test16 test16.output | cat -e
+
+Diff OK :D
+= Test 17 ==================================================
+$> ./486dt886b9wvxxf9u7gtz7ih "1950"
+$> diff -U 3 user_output_test17 test17.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

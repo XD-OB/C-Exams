@@ -1,0 +1,59 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1r8p6.1337.ma
+Darwin 16.7.0 x86_64
+$> date
+Fri Feb  8 11:15:50 CET 2019
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/practice-exam_20190208/ishaimou2
+
+= Git history ==================================================================
+$> git -C /var/folders/c_/76xmkbw550512zvdjl9cq3b00000gq/T/tmpYSB4BV/user log --pretty='%H - %an, %ad : %s'
+deaf475a83b9e068bf1e3e861193b218a6e70572 - nayarix, Fri Feb 8 11:15:35 2019 +0100 : done
+c92ce1cc64b398c7e23a29bbb789b4f18448a7cf - nayarix, Fri Feb 8 11:09:20 2019 +0100 : done
+187482a408033613674a8465d34112347aafa6b1 - nayarix, Fri Feb 8 11:08:23 2019 +0100 : done
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/c_/76xmkbw550512zvdjl9cq3b00000gq/T/tmpYSB4BV/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  675 Feb  8 11:15 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  8 11:15 ft_print_numbers
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  8 11:15 ft_strlen
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  8 11:15 swap_bits
+
+/var/folders/c_/76xmkbw550512zvdjl9cq3b00000gq/T/tmpYSB4BV/user/ft_print_numbers:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1015 Feb  8 11:15 ft_print_numbers.c
+
+/var/folders/c_/76xmkbw550512zvdjl9cq3b00000gq/T/tmpYSB4BV/user/ft_strlen:
+total 8
+-rw-r--r--  1 deepthought  deepthought  978 Feb  8 11:15 ft_strlen.c
+
+/var/folders/c_/76xmkbw550512zvdjl9cq3b00000gq/T/tmpYSB4BV/user/swap_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  980 Feb  8 11:15 swap_bits.c
+ 
+= swap_bits ====================================================================
+$> gcc -Wextra -Wall -Werror main.c swap_bits.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./lmocargz14ze26e2is9uvmzr
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

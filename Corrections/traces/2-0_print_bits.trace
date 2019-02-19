@@ -1,0 +1,66 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e2r6p12.1337.ma
+Darwin 16.7.0 x86_64
+$> date
+Sun Feb  3 11:40:39 CET 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 8.1.0 (clang-802.0.38)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 8.1.0 (clang-802.0.38)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/practice-exam_20190203/ishaimou5
+
+= Git history ==================================================================
+$> git -C /var/folders/2f/2myp73q12hn9gp8vk9l3bmdh0000gq/T/tmp28UJoF/user log --pretty='%H - %an, %ad : %s'
+b82e669fdeddc000137bab33a61c9e29a29c3f4a - nayarix, Sun Feb 3 11:39:19 2019 +0100 : done
+d5509fd327c37ec2e2d53909f93c6994626833df - nayarix, Sun Feb 3 11:37:28 2019 +0100 : done
+aebb0e59881ba8df8fad78ebbf513b9dc45d9c51 - nayarix, Sun Feb 3 11:29:10 2019 +0100 : done
+b137755462c4d4f3047452e65a7db49df60d02d1 - nayarix, Sun Feb 3 11:26:43 2019 +0100 : done
+3ae8faa57fb3b9ae069e7cb98879e0774709aee8 - nayarix, Sun Feb 3 11:26:24 2019 +0100 : done
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/2f/2myp73q12hn9gp8vk9l3bmdh0000gq/T/tmp28UJoF/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1120 Feb  3 11:40 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  3 11:40 aff_z
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  3 11:40 ft_print_numbers
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  3 11:40 print_bits
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  3 11:40 repeat_alpha
+
+/var/folders/2f/2myp73q12hn9gp8vk9l3bmdh0000gq/T/tmp28UJoF/user/aff_z:
+total 8
+-rw-r--r--  1 deepthought  deepthought  75 Feb  3 11:40 aff_z.c
+
+/var/folders/2f/2myp73q12hn9gp8vk9l3bmdh0000gq/T/tmp28UJoF/user/ft_print_numbers:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1035 Feb  3 11:40 ft_print_numbers.c
+
+/var/folders/2f/2myp73q12hn9gp8vk9l3bmdh0000gq/T/tmp28UJoF/user/print_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1039 Feb  3 11:40 print_bits.c
+
+/var/folders/2f/2myp73q12hn9gp8vk9l3bmdh0000gq/T/tmp28UJoF/user/repeat_alpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1305 Feb  3 11:40 repeat_alpha.c
+ 
+= print_bits ===================================================================
+$> gcc -Wextra -Wall -Werror main.c print_bits.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./i83exbev1tyxeercbyddjofc
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================
