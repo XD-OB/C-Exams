@@ -34,7 +34,7 @@ int	is_ennemy(char c)
 
 int	check_mate_p(int x, int y, int size, char **map)
 {
-	if (y == size)
+	if (y == size - 1)
 		return (0);
 	if (x != size - 1)
 	{
@@ -122,12 +122,15 @@ int	main(int ac, char **av)
 						ennemy++;
 				}
 			}
-			if (!ennemy)
-				write(1, "Fail", 4);
-			else if (check_mate(kx, ky, ac - 1, av))
-				write(1, "Success", 7);
-			else
-				write(1, "Fail", 4);
+			if (kx != -1 && ky != -1)
+			{
+				if (!ennemy)
+					write(1, "Fail", 4);
+				else if (check_mate(kx, ky, ac - 1, av))
+					write(1, "Success", 7);
+				else
+					write(1, "Fail", 4);
+			}
 		}
 	}	
 	write(1, "\n", 1);
