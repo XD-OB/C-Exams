@@ -51,29 +51,50 @@ int	check_mate_p(int x, int y, int size, char **map)
 
 int	check_mate_rq(int x, int y, int size, char **map)
 {
-	int		i = -1;
+	int		i = x;
 
-	while (++i < size)
-		if (map[i][x] == 'R' || map[i][x] == 'Q' || map[y][i] == 'R' || map[y][i] == 'Q')
+	while (++i < size && map[y][i] != 'P' && map[y][i] != 'B')
+		if (map[y][i] == 'R' || map[y][i] == 'Q')
+			return (1);
+	i = x;
+	while (--i >= 0 && map[y][i] != 'P' && map[y][i] != 'B')
+		if (map[y][i] == 'R' || map[y][i] == 'Q')
+			return (1);
+	i = y;
+	while (++i < size && map[i][x] != 'P' && map[i][x] != 'B')
+		if (map[i][x] == 'R' || map[i][x] == 'Q')
+			return (1);
+	i = y;
+	while (--i >= 0 && map[i][x] != 'P' && map[i][x] != 'B')
+		if (map[i][x] == 'R' || map[i][x] == 'Q')
 			return (1);
 	return (0);
 }
 
 int	check_mate_bq(int x, int y, int size, char **map)
 {
-	int		i = -1;
-	int		j;
+	int		i = y;
+	int		j = x;
 
-	while (++i < size)
-	{
-		j = -1;
-		while (++j < size)
-		{
-			if (x + j == y + i && (map[i][j] == 'B' || map[i][j] == 'Q'))
-					return (1);
-		}
-	}
-	return (0);	
+	while (++i < size && ++j < size && map[i][j] != 'P' && map[i][j] != 'R')
+		if (map[i][j] == 'B' || map[i][j] == 'Q')
+			return (1);
+	i = y;
+	j = x;
+	while (++i < size && --j >= 0 && map[i][j] != 'P' && map[i][j] != 'R')
+		if (map[i][j] == 'B' || map[i][j] == 'Q')
+			return (1);
+	i = y;
+	j = x;
+	while (--i >= 0 && ++j < size && map[i][j] != 'P' && map[i][j] != 'R')
+		if (map[i][j] == 'B' || map[i][j] == 'Q')
+			return (1);
+	i = y;
+	j = x;
+	while (--i >= 0 && --j >= 0 && map[i][j] != 'P' && map[i][j] != 'R')
+		if (map[i][j] == 'B' || map[i][j] == 'Q')
+			return (1);
+	return (0);
 }
 
 int	check_mate(int x, int y, int size, char **map)
