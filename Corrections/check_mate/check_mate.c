@@ -1,134 +1,107 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_mate.c                                       :+:      :+:    :+:   */
+/*   checkmate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ishaimou <ishaimou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: obelouch <OB-96@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/26 19:58:20 by ishaimou          #+#    #+#             */
-/*   Updated: 2019/02/26 20:16:01 by ishaimou         ###   ########.fr       */
+/*   Created: 2019/03/12 22:07:08 by obelouch          #+#    #+#             */
+/*   Updated: 2019/03/12 22:55:03 by obelouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+int		p(char **av, int ky, int kx, int size)
 {
-	while (*str)
-		write(1, str++, 1);
-}
-
-int	is_ennemy(char c)
-{
-	if (c == 'Q' || c == 'B' || c == 'P' || c == 'R')
+	if (ky == size - 1)
+		return (0);
+	if (kx > 0 && av[ky + 1][kx - 1] == 'P')
+		return (1);
+	if (kx < size - 1 && av[ky + 1][kx + 1] == 'P')
 		return (1);
 	return (0);
 }
 
-int	check_mate_p(int x, int y, int size, char **map)
+int		b_q(char **av, int ky, int kx, int size)
 {
-	if (y == size - 1)
-		return (0);
-	if (x != size - 1)
-	{
-		if (map[y + 1][x + 1] == 'P')
-			return (1);
-	}
-	if (x != 0)
-	{
-		if (map[y + 1][x - 1] == 'P')
-			return (1);
-	}
-	return (0);
-}
+	int		i = 0;
+	int		j = 0;
 
-int	check_mate_rq(int x, int y, int size, char **map)
-{
-	int		i = x;
-
-	while (++i < size && map[y][i] != 'P' && map[y][i] != 'B')
-		if (map[y][i] == 'R' || map[y][i] == 'Q')
+	while ((ky + --i) >= 0 && (kx + --j) >= 0 && av[ky + i][kx + j] != 'R' && av[ky + i][kx + j] != 'P')
+		if (av[ky + i][kx + j] == 'B' || av[ky + i][kx + j] == 'Q')
 			return (1);
-	i = x;
-	while (--i >= 0 && map[y][i] != 'P' && map[y][i] != 'B')
-		if (map[y][i] == 'R' || map[y][i] == 'Q')
+	j = i = 0;
+	while ((ky + ++i) < size && (kx + ++j) < size && av[ky + i][kx + j] != 'R' && av[ky + i][kx + j] != 'P')
+		if (av[ky + i][kx + j] == 'B' || av[ky + i][kx + j] == 'Q')
 			return (1);
-	i = y;
-	while (++i < size && map[i][x] != 'P' && map[i][x] != 'B')
-		if (map[i][x] == 'R' || map[i][x] == 'Q')
+	j = i = 0;
+	while ((ky + ++i) < size && (kx + --j) >= 0 && av[ky + i][kx + j] != 'R' && av[ky + i][kx + j] != 'P')
+		if (av[ky + i][kx + j] == 'B' || av[ky + i][kx + j] == 'Q')
 			return (1);
-	i = y;
-	while (--i >= 0 && map[i][x] != 'P' && map[i][x] != 'B')
-		if (map[i][x] == 'R' || map[i][x] == 'Q')
+	j = i = 0;
+	while ((ky + --i) >= 0 && (kx + ++j) < size && av[ky + i][kx + j] != 'R' && av[ky + i][kx + j] != 'P')
+		if (av[ky + i][kx + j] == 'B' || av[ky + i][kx + j] == 'Q')
 			return (1);
 	return (0);
 }
 
-int	check_mate_bq(int x, int y, int size, char **map)
+int		r_q(char **av, int ky, int kx, int size)
 {
-	int		i = y;
-	int		j = x;
+	int		i = kx;
 
-	while (++i < size && ++j < size && map[i][j] != 'P' && map[i][j] != 'R')
-		if (map[i][j] == 'B' || map[i][j] == 'Q')
+	while (++i < size && av[ky][i] != 'B' && av[ky][i] != 'P')
+		if (av[ky][i] == 'R' || av[ky][i] == 'Q')
 			return (1);
-	i = y;
-	j = x;
-	while (++i < size && --j >= 0 && map[i][j] != 'P' && map[i][j] != 'R')
-		if (map[i][j] == 'B' || map[i][j] == 'Q')
+	i = kx;
+	while (--i >= 0 && av[ky][i] != 'B' && av[ky][i] != 'P')
+		if (av[ky][i] == 'R' || av[ky][i] == 'Q')
 			return (1);
-	i = y;
-	j = x;
-	while (--i >= 0 && ++j < size && map[i][j] != 'P' && map[i][j] != 'R')
-		if (map[i][j] == 'B' || map[i][j] == 'Q')
+	i = ky;
+	while (++i < size && av[i][kx] != 'B' && av[i][ky] != 'P')
+		if (av[i][kx] == 'R' || av[i][kx] == 'Q')
 			return (1);
-	i = y;
-	j = x;
-	while (--i >= 0 && --j >= 0 && map[i][j] != 'P' && map[i][j] != 'R')
-		if (map[i][j] == 'B' || map[i][j] == 'Q')
+	i = ky;
+	while (--i >= 0 && av[i][kx] != 'B' && av[i][kx] != 'P')
+		if (av[i][kx] == 'R' || av[i][kx] == 'Q')
 			return (1);
 	return (0);
 }
 
-int	check_mate(int x, int y, int size, char **map)
+int		checkmate(char	**av)
 {
-	return (check_mate_p(x, y, size, map)
-			|| check_mate_rq(x, y, size, map)
-			|| check_mate_bq(x, y, size, map));
-}
+	int			kx;
+	int			ky;
+	int			size = 0;
+	int			i = -1;
+	int			j;
 
-int	main(int ac, char **av)
-{
-	int	kx = -1;
-	int	ky = -1;
-	int	i = -1;
-	int	ennemy = 0;
-	int	j;
-
-	if (ac > 1)
+	while (av[0][size])
+		size++;
+	while (++i < size)
 	{
-		av++;
-		while (++i < ac - 1)
+		j = -1;
+		while (++j < size)
 		{
-			j = -1;
-			while (++j < ac - 1)
+			if (av[i][j] == 'K')
 			{
-				if (av[i][j] == 'K')
-				{
-					kx = j;
-					ky = i;
-				}
-				if (is_ennemy(av[i][j]))
-					ennemy++;
+				kx = j;
+				ky = i;
 			}
 		}
-		if (!ennemy)
-			write(1, "Fail", 4);
-		else if (check_mate(kx, ky, ac - 1, av))
+	}
+	return (r_q(av, ky, kx, size) || b_q(av, ky, kx, size) || p(av, ky, kx, size));
+}
+
+int		main(int ac, char **av)
+{
+	if (ac != 1)
+	{
+		av++;
+		if (checkmate(av))
 			write(1, "Success", 7);
 		else
 			write(1, "Fail", 4);
-	}	
+	}
 	write(1, "\n", 1);
-	return (0);
 }
