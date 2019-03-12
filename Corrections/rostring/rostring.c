@@ -3,55 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   rostring.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ishaimou <ishaimou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: obelouch <OB-96@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/04 09:02:33 by ishaimou          #+#    #+#             */
-/*   Updated: 2019/02/04 09:05:42 by ishaimou         ###   ########.fr       */
+/*   Created: 2019/03/12 14:38:22 by obelouch          #+#    #+#             */
+/*   Updated: 2019/03/12 15:09:20 by obelouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_putchar(char	c)
+{
+	write(1, &c, 1);
+}
+
 int		is_blank(char c)
 {
-	return (c == 32 || c == 9);
+	if ((c >= 9 && c <= 13) || c == ' ')
+		return (1);
+	return (0);
 }
 
 void	rostring(char *str)
 {
-	int		i;
-	int		len;
-	
-	i = 0;
-	len = 0;
-	while (str[i])
-	{
-		while (is_blank(str[i]))
-			i++;
-		if (str[i])
-		{
-			if (!len)
-				while(str[i] && !is_blank(str[i++]))
-					len++;
-			else
-			{
-				while (str[i] && !is_blank(str[i]))
-					write(1, &str[i++], 1);
-				write(1, " ", 1);
-			}
-		}
-	}
-	i = 0;
+	int		i = 0;
+	int		flag;
+	int		posfword;
+	int		sizefword;
+
 	while (is_blank(str[i]))
 		i++;
-	while (len--)
-		write(1, &str[i++], 1);
+	posfword = i;
+	while (!is_blank(str[i]))
+		i++;
+	sizefword = i - posfword;
+	while (str[i])
+	{
+		flag = 0;
+		while (str[i] && !is_blank(str[i]))
+		{
+			ft_putchar(str[i]);
+			flag = 1;
+			i++;
+		}
+		while (str[i] && is_blank(str[i]))
+			i++;
+		if (flag == 1)
+			ft_putchar(' ');
+	}
+	i = -1;
+	while (++i < sizefword)
+		ft_putchar(str[posfword + i]);
 }
 
-int		main(int argc, char *argv[])
+int		main(int ac, char **av)
 {
-	if (argc > 1 && *argv[1])
-		rostring(argv[1]);
-	write(1, "\n", 1);
+	if (ac > 1 && *av[1])
+		rostring(av[1]);
+	ft_putchar('\n');
 	return (0);
 }
