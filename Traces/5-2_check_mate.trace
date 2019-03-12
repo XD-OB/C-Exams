@@ -1,0 +1,112 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1r7p4.1337.ma
+Darwin 16.7.0 x86_64
+$> date
+Tue Feb 26 20:16:27 CET 2019
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/practice-exam_20190226/ishaimou
+
+= Git history ==================================================================
+$> git -C /var/folders/90/lgh66d5n6m7471z9dyc8m2xr0000gq/T/tmpbNttxC/user log --pretty='%H - %an, %ad : %s'
+9a75074af98486603bddc6be435a0ac5e9473bff - nayarix, Tue Feb 26 20:16:08 2019 +0100 : done
+900a5a14a772e9a00cf59b3121dd6dc400511d8d - nayarix, Tue Feb 26 20:06:06 2019 +0100 : done
+5b1723bdd597d5e50317791a6d900653f94f5240 - nayarix, Tue Feb 26 20:02:02 2019 +0100 : done
+7ff1a1087611003c7c002b32650b7e59e70ab0f5 - nayarix, Tue Feb 26 19:59:41 2019 +0100 : done
+e4098e21523018f24bb955605abe665beb5f7403 - nayarix, Tue Feb 26 19:57:58 2019 +0100 : done
+26b60f6743d7b4c329a03179c756ceb4a1d10ec0 - nayarix, Tue Feb 26 19:56:21 2019 +0100 : done
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/90/lgh66d5n6m7471z9dyc8m2xr0000gq/T/tmpbNttxC/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1418 Feb 26 20:16 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 26 20:16 check_mate
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 26 20:16 only_z
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 26 20:16 paramsum
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 26 20:16 print_bits
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 26 20:16 search_and_replace
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 26 20:16 sort_list
+
+/var/folders/90/lgh66d5n6m7471z9dyc8m2xr0000gq/T/tmpbNttxC/user/check_mate:
+total 8
+-rw-r--r--  1 deepthought  deepthought  3236 Feb 26 20:16 check_mate.c
+
+/var/folders/90/lgh66d5n6m7471z9dyc8m2xr0000gq/T/tmpbNttxC/user/only_z:
+total 8
+-rw-r--r--  1 deepthought  deepthought  965 Feb 26 20:16 only_z.c
+
+/var/folders/90/lgh66d5n6m7471z9dyc8m2xr0000gq/T/tmpbNttxC/user/paramsum:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1163 Feb 26 20:16 paramsum.c
+
+/var/folders/90/lgh66d5n6m7471z9dyc8m2xr0000gq/T/tmpbNttxC/user/print_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1039 Feb 26 20:16 print_bits.c
+
+/var/folders/90/lgh66d5n6m7471z9dyc8m2xr0000gq/T/tmpbNttxC/user/search_and_replace:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1291 Feb 26 20:16 search_and_replace.c
+
+/var/folders/90/lgh66d5n6m7471z9dyc8m2xr0000gq/T/tmpbNttxC/user/sort_list:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1407 Feb 26 20:16 sort_list.c
+ 
+= check_mate ===================================================================
+$> gcc -Wextra -Wall -Werror check_mate.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./81k866dgj44l0k8r9jpltjf1 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./kd8ay8m55kzbw5koae43d9vk '...B.' '.B...' '$%^&*' '...K.' '.....'
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./7a80xauksorndzkk6azl2x7f  "...B." ".T..." "....." "...K." "....."
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./d7oc6rdxu9e1exxmjo3x5560 "K"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./e0t1ef70qka6cg4ydjcs5trc "BPKP" "PRP." ".Q.." "..P."
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./dzlqggsuov0ja9axx5e1bid3 "B....." "......" "......" "......" "......" ".....K"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./fjl3rxwyzba07k5yilvn7trz "K....." "......" "......" "......" "......" ".....B"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./htmf88hkjwkavdpe9n0w8don '........' '........' '.P....P.' '...B.B..' '....Q...' '..R..R..' '......K.' '...R....'
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

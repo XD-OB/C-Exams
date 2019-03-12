@@ -1,16 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tab_mult.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ishaimou <ishaimou@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/07 10:59:11 by ishaimou          #+#    #+#             */
+/*   Updated: 2019/02/07 11:07:27 by ishaimou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 int		is_blank(char c)
 {
-	return (c == ' ' || c == '\t' || c == '\n' || c == '\r'
-			|| c == '\f' || c == '\v');
+	return (c == 32 || (c >= 9 && c <= 13));
 }
-
-int		is_num(char c)
-{
-	return (c >= '0' && c <= '9');
-}
-
 
 void		ft_putchar(char c)
 {
@@ -48,25 +53,21 @@ void	ft_putnbr(int nb)
 
 int		ft_atoi(char *str)
 {
-	int		is_signed;
+	int		sign;
 	int		ret;
 
-	is_signed = 0;
 	ret = 0;
 	while (is_blank(*str))
 		str++;
-	if (*str == '-')
-		is_signed = 1;
+	sign = (*str == '-') ? -1 : 1;
 	if (*str == '-' || *str == '+')
 		str++;
-	while (*str && is_num(*str))
+	while (*str && (*str >= 48 && *str <= 57))
 	{
 		ret = (ret * 10) + (*str - 48);
 		str++;
 	}
-	if (is_signed == 1)
-		return (-ret);
-	return (ret);
+	return (ret * sign);
 }
 
 int	main(int argc, char **argv)

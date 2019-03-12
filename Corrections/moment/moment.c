@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moment.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ishaimou <ishaimou@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/03 11:55:16 by ishaimou          #+#    #+#             */
+/*   Updated: 2019/02/08 12:33:24 by ishaimou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 int		ft_strlen(char *str)
@@ -10,60 +22,30 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strdup(char *str)
-{
-	char	*dup;
-	int		i;
-
-	i = 0;	
-	dup = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
-	while (str[i])
-	{
-		dup[i] = str[i];
-		i++;
-	}
-	dup[i] = '\0';
-	return (dup);
-}
-
 char	*ft_itoa(int nbr)
 {
-	int		i;
-	int		count;
+	char	*result;
+	long	tmp;
 	int		size;
-	int		tmp;
-	char	*tab;
+	int		sign;
 
-	i = 0;
-	size = 1;
-	if (nbr == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (nbr < 0)
+	sign = (nbr < 0) ? 1 : 0;
+	size = sign ? 2 : 1;
+	tmp = (nbr < 0) ? -(long)nbr : nbr;
+	while (tmp /= 10)
 		size++;
-	tmp = nbr >= 0 ? nbr : -nbr;
-	while ((tmp = tmp / 10) > 0)
-		size++;
-	tab = (char*)malloc(sizeof(char) * (size + 1));
-	tab[size] = '\0';
-	if (nbr < 0)
+	if (!(result = (char*)malloc(sizeof(char) * (size + 1))))
+			return (result);
+	result[size] = '\0';
+	if (sign)
+		result[0] = '-';
+	tmp = (nbr < 0) ? -(long)nbr : nbr;
+	while (--size >= sign)
 	{
-		nbr = -nbr;
-		tab[i] = '-';
-		i++;
+		result[size] = (tmp % 10) + 48;
+		tmp /= 10;
 	}
-	tmp = nbr;
-	count = 1;
-	while ((tmp = tmp / 10) > 0)
-		count *= 10;
-	while (i < size && count >= 10)
-	{
-		tab[i] = (nbr / count) + 48;
-		nbr %= count; 
-		count /= 10;
-		i++;
-	}
-	tab[i] = (nbr / count) + 48;
-	return (tab);
+	return (result);
 }
 
 char	*ft_strcpy(char *s1, char *s2)

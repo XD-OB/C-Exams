@@ -33,7 +33,7 @@ int main(void)
 {
 	char **area;
 	t_point size = { 5, 5 };
-	t_point begin = { 3, 2 };
+	t_point begin = { 1, 1 };
 	char *zone[] = {
 		"00000",
 		"10111",

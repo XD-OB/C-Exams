@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ishaimou <ishaimou@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/03 09:04:09 by ishaimou          #+#    #+#             */
+/*   Updated: 2019/02/03 09:04:47 by ishaimou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 int		is_blank(char c)
@@ -30,8 +42,12 @@ int		wcount(char *str)
 
 void	wposition(char *str, int *p)
 {
-	while (str[*p] && is_blank(str[*p]))
+	while (str[*p])
+	{
+		if (!is_blank(str[*p]))
+			return ;
 		(*p)++;
+	}
 }
 
 int		wsize(char *str, int p)
