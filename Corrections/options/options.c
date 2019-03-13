@@ -3,64 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   options.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ishaimou <ishaimou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: obelouch <obelouch@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/29 03:16:25 by ishaimou          #+#    #+#             */
-/*   Updated: 2019/01/29 03:17:06 by ishaimou         ###   ########.fr       */
+/*   Created: 2019/01/29 03:16:25 by obelouch          #+#    #+#             */
+/*   Updated: 2019/01/29 03:17:06 by obelouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int main(int ac, char **av)
+void    ft_putchar(char c)
 {
-	int i = 1;
-	int  t[32] = {0}; 
-	int j ;
+        write(1, &c, 1);
+}
 
-	if(ac == 1)
-	{
-		write(1,"options: abcdefghijklmnopqrstuvwxyz\n",36);
-		return 0;
-	}
-	i = 1;
-	while (i < ac)
-	{
-		j = 1;
-		if(av[i][0] == '-')
-		{
-			while(av[i][j] && av[i][j] >= 'a'  && av[i][j] <= 'z')
-			{
-				if(av[i][j] == 'h')
-				{
-					write(1,"options: abcdefghijklmnopqrstuvwxyz\n",36);
-					return 0;
-				}
+void    print_tab(int *tab)
+{
+        int     i;
 
-				t['z' - av[i][j] + 6] = 1;
-				j++;
-			}
+        i = 0;
+        while (i < 32)
+        {
+                ft_putchar(tab[i] + '0');
+                i++;
+                if (i % 8 == 0)
+                        ft_putchar(' ');
+        }
+        ft_putchar('\n');
+}
 
-			if (av[i][j])
-			{
-				write(1,"Invalid Option\n",15);
-				return 0;
-			}
-			j++;
-		}
-		i++;
-	}
-	i = 0;
-		while (i < 32)
-		{
-		t[i] = '0' + t[i];
-		write(1,&t[i++],1);
-			if(i == 32)
-				write(1,"\n",1);
-			else if(i % 8 == 0)
-				write(1," ",1);
+int     main(int ac, char **av)
+{
+        int     i;
+        int     j;
+        int     bits[32] = {0};
 
-		}
-
-	return 0;
+        if (ac == 1)
+        {
+                write(1, "options: abcdefghijklmnopqrstuvwxyz\n", 36);
+                return (0);
+        }
+        i = 1;
+        while (av[i])
+        {
+                if (av[i][0] == '-')
+                {
+                        j = 1;
+                        while (av[i][j] && av[i][j] >= 'a' && av[i][j] <= 'z')
+                        {
+                                if (av[i][j] == 'h')
+                                {
+                                        write(1, "options: abcdefghijklmnopqrstuvwxyz\n", 36);
+                                        return (0);
+                                }
+                                bits[6 + 'z' - av[i][j]] = 1;
+                                j++;
+                        }
+                        if (av[i][j])
+                        {
+                                write(1, "Invalid Option\n", 15);
+                                return (0);
+                        }
+                }
+                i++;
+        }
+        print_tab(bits);
+        return (0);
 }
