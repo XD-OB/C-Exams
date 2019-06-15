@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_memory.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ishaimou <ishaimou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: obelouch <OB-96@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/29 04:54:48 by ishaimou          #+#    #+#             */
-/*   Updated: 2019/02/20 16:55:58 by ishaimou         ###   ########.fr       */
+/*   Created: 2019/06/15 23:27:38 by obelouch          #+#    #+#             */
+/*   Updated: 2019/06/15 23:28:03 by obelouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,6 @@
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-}
-
-void	ft_putstr(char *s)
-{
-	while (*s)
-		ft_putchar(*s++);
 }
 
 void	ft_printhex(int n)
@@ -58,7 +52,7 @@ void	print_memory(const void *addr, size_t size)
 				ft_printhex(t[i]);
 			}
 			else
-				ft_putstr("  ");
+				write(1, "  ", 2);
 			if (!(++i % 2))
 				ft_putchar(32);
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   biggest_pal.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ishaimou <ishaimou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: obelouch <OB-96@hotmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/18 16:30:21 by ishaimou          #+#    #+#             */
-/*   Updated: 2019/02/18 16:37:53 by ishaimou         ###   ########.fr       */
+/*   Created: 2019/06/15 22:59:11 by obelouch          #+#    #+#             */
+/*   Updated: 2019/06/15 22:59:27 by obelouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,18 @@
 
 int		ft_strlen(char *str)
 {
-	int		i = 0;
+	int		len = 0;
 
-	while (str[i])
-		i++;
-	return (i);
+	while (str[len])
+		len++;
+	return (len);
 }
 
-void	print_pal(char *str, int start, int maxlen)
+void	bigpal(char *str)
 {
-		write(1, &str[start], maxlen);
-}
-
-void	biggest_pal(char *str)
-{
-	int		i;
-	int		len;
-	int		low, high;
-	int		start;
-	int		maxlen;
+	int		high, low;
+	int		maxlen, len;
+	int		start, i;
 
 	i = 0;
 	maxlen = 1;
@@ -40,38 +33,29 @@ void	biggest_pal(char *str)
 	start = len - 1;
 	while (++i < len)
 	{
-		low = i - 1;
-		high = i + 1;
-		while (low >= 0 && high < len && str[low] == str[high])
-		{
-			if (high - low + 1 >= maxlen)
-			{	
-				start = low;
-				maxlen = high - low + 1;
-			}
-			high++;
-			low--;
-		}
-		low = i - 1;
-		high = i;
-		while (low >= 0 && high < len && str[low] == str[high])
-		{
-			if (high - low + 1 >= maxlen)
+		high = low = i;
+		while (--low >= 0 && ++high < len && str[low] == str[high])
+			if (maxlen <= high - low + 1)
 			{
-				start = low;
 				maxlen = high - low + 1;
+				start = low;
 			}
-			high++;
-			low--;
-		}
+		low = i;
+		high = i - 1;
+		while (--low >= 0 && ++high < len && str[low] == str[high])
+			if (maxlen <= high - low + 1)
+			{
+				maxlen = high - low + 1;
+				start = low;
+			}
 	}
-	print_pal(str, start, maxlen);
+	write(1, &str[start], maxlen);
 }
 
-int		main(int argc, char *argv[])
+int		main(int ac, char **av)
 {
-	if (argc == 2)
-		biggest_pal(argv[1]);
+	if (ac == 2)
+		bigpal(av[1]);
 	write(1, "\n", 1);
 	return (0);
 }
