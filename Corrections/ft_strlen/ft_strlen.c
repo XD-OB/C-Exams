@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ishaimou <ilyass.sh@gmail.com>             +#+  +:+       +#+        */
+/*   By: obelouch <obelouch96@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/24 22:37:06 by ishaimou          #+#    #+#             */
-/*   Updated: 2019/01/29 03:40:57 by ishaimou         ###   ########.fr       */
+/*   Created: 2018/12/24 22:34:02 by obelouch          #+#    #+#             */
+/*   Updated: 2018/12/24 22:40:03 by obelouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strlen(char *str)
 {
-	int		i;
+	int		len = 0;
 
-	i  = 0;	
-	while (str[i])
-		i++;
-	return (i);
+	while (str[len])
+		len++;
+	return (len);
 }

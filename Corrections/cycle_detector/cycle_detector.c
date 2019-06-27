@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   cycle_detector.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ishaimou <ishaimou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: obelouch <obelouch@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 17:58:32 by ishaimou          #+#    #+#             */
 /*   Updated: 2019/02/18 17:59:33 by ishaimou         ###   ########.fr       */
