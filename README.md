@@ -1,3 +1,10 @@
-# Alone In The Dark: Beginner Subjects + Corrections
+# 42 Exams
+## Alone In The Dark
 
-Collected and solved with ishaimou
+Subjects + Corrections
+
+## Owner
+- Oussama Belouche 1337
+
+#
+[![forthebadge](https://forthebadge.com/images/badges/oooo-kill-em.svg)](https://forthebadge.com)
